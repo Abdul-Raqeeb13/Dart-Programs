@@ -1,6 +1,7 @@
 import 'dart:io';
 
 void main() {
+
   // 1). Basic program --------------------------------------------------------------------------
 
   // To show the value to user
@@ -12,6 +13,7 @@ void main() {
   int num2 = int.parse(stdin.readLineSync()!);
 
   // Difference between those is stdout generate new line which is print can't do
+  print("-------------------------- Block 1 ------------------------------------");
   print(num1 + num2);
   stdout.write(num1 + num2);
 
@@ -77,6 +79,7 @@ void main() {
   // 6. Late Initialization
   // Use the late keyword for variables that are initialized later but must be non-nullable. This is useful for expensive computations or variables initialized in initState.
 
+  print("------------------------------ Block 5 ka 6---------------------------");
   late String username;
   username = "Abdul"; // Initialized later
   print(username);
@@ -84,6 +87,7 @@ void main() {
   // 7. Nullable Variables (?)
   // You can declare variables that can hold a null value by appending a ? to the type.
 
+  print("------------------------------ Block 5 ka 7 ---------------------------");
   String? nullableName;
   nullableName = null; // No error
   print(nullableName);
@@ -91,6 +95,7 @@ void main() {
   // 8. Default Initialization
   // Dart initializes variables with a default value of null if not explicitly initialized (except for final and const).
 
+  print("------------------------------ Block 5 ka 8 ---------------------------");
   int? number; // Default value is null
   print(number); // Output: null
 
@@ -112,14 +117,13 @@ void main() {
   const List<String> fruitss = ["Apple", "Banana"];
   const Set<int> numberss = {1, 2, 3};
   const Map<String, int> scoress = {"John": 90, "Jane": 85};
-}
 
   //  6). Operaotrs ----------------------------------------------------------------------------------
 
   // Arithmetic, Ternary, Logical, 
   // We skip this part because i have much lknowledge about these operators
 
-  // 7). Dart Collections -> collection menas set of object
+  // 7). Dart Collections -> collection menas set of object -------------------------------------------
   
     // 1). Lists - > store data in order way 
     // Different methods - > add , remove, removeat , contains , length , isempty , isnotempty , insert , insertall , first , last , reversed
@@ -132,5 +136,89 @@ void main() {
 
     Set set1 = {1,2,3,4,5};
 
-    // 3). Map ->  
+    // 3). Map -> store data in a unorder way with key value pair key must be unique
+    //  Different methods -> keys , values , isempty , isnotempty , remove[key] , addall 
+    // Map<String, dynamic>mapdata={} for storing int and string value at the same time
+    Map<String, String>mapdata={
+        "Name" : "ARK",
+        "Age" : '20'
+    };
 
+
+  // 8). Conditional statement ------------------------------------------------------------------------
+
+  print("--------------------------- block 8 ------------------------------------");
+  int marks = 80;
+  if(marks>=90){
+    print("Bike");
+  }
+  else if(marks>=80){
+    print("phone");
+  }
+  else{
+    print("Nothing");
+  }
+
+
+  // 9). Switch statement
+
+  print("--------------------------- block 9 ------------------------------------");
+
+ stdout.write("Enter Your First Number");
+ int val1 = int.parse(stdin.readLineSync()!);
+ 
+ stdout.write("Enter Your Second Number");
+ int val2 = int.parse(stdin.readLineSync()!);
+ 
+ stdout.write("Enter Your operations + - / *");
+ String operations = stdin.readLineSync()!;
+
+  switch (operations) {
+    case "+":
+      print(val1+val2);
+      break;
+    case "-":
+      print(val1-val2);
+      break;
+    case "/":
+      print(val1/val2);
+      break;
+    case "*":
+      print(val1*val2);
+      break;
+    default:
+      print('Enter correct choice');
+  }
+
+
+
+  // 10). Dart Loops
+
+  print("----------------------------- block 10 ------------------------------------");
+
+  // for loop -> used when know starting and ending 
+  // for each loop -> used with collections like list , set , map
+  // while loop -> used when we dont know the starting point
+  // Do while loop -> used when we dont know the starting point and ending point 
+
+  print("===== for loop =======");
+  for (var i = 1; i < 11; i++) {
+    print(i);
+  }
+
+  print("===== while loop =======");
+  int j = 1;
+  while (j < 11) {
+    print(j);
+    j++;
+  }
+
+  print("======= Do while Loop ========");
+  int k = 1;
+  do {
+    print(k < 11);
+    k++ ;
+  } while (k <  11);
+
+  
+}
